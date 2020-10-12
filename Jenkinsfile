@@ -1,5 +1,4 @@
 def builderDocker
-def CommitHash
 
 pipeline {
 
@@ -23,8 +22,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    CommitHash = sh (script : "git log -n 1 --pretty=format:'%H'", returnStdout: true)
-                    builderDocker = docker.build("tresnaadin/jenkins-backend-example:${CommitHash}")
+                    builderDocker = docker.build("tresnaadin/jenkins-backend-example:dev")
                 }
             }
         }
