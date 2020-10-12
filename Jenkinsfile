@@ -56,7 +56,7 @@ pipeline {
             }
         }
 
-        stage('Deploy on devlop') {
+        stage('Deploy on develop') {
             when {
                 expression {
                     params.CICD == 'CICD Deployment' || BRANCH_NAME == 'dev'
@@ -94,7 +94,7 @@ pipeline {
                     sshPublisher(
                         publishers: [
                             sshPublisherDesc(
-                                configName: 'production-server',
+                                configName: 'prod-user',
                                 verbose: false,
                                 transfers: [
                                     sshTransfer(
