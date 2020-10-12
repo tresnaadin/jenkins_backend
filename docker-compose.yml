@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
     backend:
-        image: tresnaadin/jenkins-backend-example:dev
+        image: tresnaadin/jenkins-backend-example:main
         container_name: backend-express
         ports:
             - 4321:4321
